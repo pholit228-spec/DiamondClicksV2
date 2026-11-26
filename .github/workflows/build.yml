@@ -16,9 +16,11 @@ jobs:
             os: windows-latest
           - name: macOS
             os: macos-latest
-          - name: iOS
-            os: macos-latest
-            target: iOS
+          # iOS disabled: FMOD header issue in Geode 5.11.2 bindings for GD 2.2081
+          # (see geode-sdk/bindings#1390)
+          # - name: iOS
+          #   os: macos-latest
+          #   target: iOS
           - name: Android32
             os: ubuntu-latest
             target: Android32
