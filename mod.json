@@ -1,0 +1,83 @@
+{
+	"geode": "5.11.2",
+	"gd": {
+		"win": "2.2081",
+		"android": "2.2081",
+		"mac": "2.2081",
+		"ios": "2.2081"
+	},
+	"version": "v1.0.0",
+	"id": "diamondsoup.diamondclicks",
+	"name": "DiamondClicks",
+	"developer": "diamondsoup",
+	"description": "Hold = autoclicker. While you hold, every frame is a real click instead of a plain held jump.",
+	"settings": {
+		"enabled": {
+			"type": "bool",
+			"name": "Enabled",
+			"description": "Turn the autoclick-on-hold behaviour on or off. When off, holding works like in vanilla.",
+			"default": true
+		},
+		"click-delay": {
+			"type": "int",
+			"name": "Click delay (frames)",
+			"description": "Frames between clicks while you hold. <cy>1</c> = a fresh click on every frame (release + press). <cy>2+</c> = a 1-frame tap every N frames.",
+			"default": 1,
+			"min": 1,
+			"max": 60,
+			"control": {
+				"slider": true,
+				"slider-step": 1,
+				"input": true
+			}
+		},
+		"mode-cube": {
+			"type": "bool",
+			"name": "Mode: Cube",
+			"description": "Autoclick while holding in the cube gamemode.",
+			"default": true
+		},
+		"mode-ship": {
+			"type": "bool",
+			"name": "Mode: Ship",
+			"description": "Autoclick while holding in the ship gamemode.",
+			"default": true
+		},
+		"mode-ball": {
+			"type": "bool",
+			"name": "Mode: Ball",
+			"description": "Autoclick while holding in the ball gamemode.",
+			"default": true
+		},
+		"mode-ufo": {
+			"type": "bool",
+			"name": "Mode: UFO",
+			"description": "Autoclick while holding in the UFO gamemode.",
+			"default": true
+		},
+		"mode-wave": {
+			"type": "bool",
+			"name": "Mode: Wave",
+			"description": "Autoclick while holding in the wave gamemode.",
+			"default": true
+		},
+		"mode-robot": {
+			"type": "bool",
+			"name": "Mode: Robot",
+			"description": "Autoclick while holding in the robot gamemode.",
+			"default": true
+		},
+		"mode-spider": {
+			"type": "bool",
+			"name": "Mode: Spider",
+			"description": "Autoclick while holding in the spider gamemode.",
+			"default": true
+		},
+		"mode-swing": {
+			"type": "bool",
+			"name": "Mode: Swing",
+			"description": "Autoclick while holding in the swing copter gamemode.",
+			"default": true
+		}
+	}
+}
