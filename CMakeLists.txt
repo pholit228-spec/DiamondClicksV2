@@ -1,8 +1,12 @@
 cmake_minimum_required(VERSION 3.21)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64")
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
+
+# Only set universal architectures for macOS desktop, not iOS
+if (APPLE AND NOT IOS)
+	set(CMAKE_OSX_ARCHITECTURES "arm64;x86_64")
+endif()
 
 project(DiamondClicks VERSION 1.0.0)
 
