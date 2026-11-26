@@ -113,9 +113,9 @@ class $modify(DCGameLayer, GJBaseGameLayer) {
 		GJBaseGameLayer::handleButton(down, button, isPlayer1);
 	}
 
-	void processCommands(float dt) {
+	void processCommands(float dt, bool isHalfTick, bool isLastTick) {
 		tick(this);
-		GJBaseGameLayer::processCommands(dt);
+		GJBaseGameLayer::processCommands(dt, isHalfTick, isLastTick);
 	}
 };
 
