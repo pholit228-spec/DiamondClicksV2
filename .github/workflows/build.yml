@@ -32,18 +32,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # mod.json "geode" must match the SDK major/minor, so sync it with the latest release
-      - name: Sync mod.json with latest Geode SDK version
-        shell: bash
-        env:
-          GH_TOKEN: ${{ github.token }}
+      # Pinned to Geode 5.11.2 / GD 2.2081 — do not auto-update to latest
+      - name: Show mod.json geode/gd versions
         run: |
-          V=$(curl -fsSL -H "Authorization: Bearer $GH_TOKEN" https://api.github.com/repos/geode-sdk/geode/releases/latest | grep -m1 '"tag_name"' | sed -E 's/.*"tag_name": *"v?([^"]+)".*/\1/' || true)
-          echo "Latest Geode SDK: '$V'"
-          if [ -n "$V" ]; then
-            sed -i.bak -E "s/\"geode\": *\"[^\"]*\"/\"geode\": \"$V\"/" mod.json && rm -f mod.json.bak
-          fi
-          grep '"geode"' mod.json
+          grep -E '"geode"|"win"|"android"' mod.json || true
 
       - name: Build the mod
         uses: geode-sdk/build-geode-mod@main
